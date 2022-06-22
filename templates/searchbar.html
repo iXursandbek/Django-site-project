@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<main id="main">
+
+    <!-- ======= Blog Section ======= -->
+   
+   
+    <section class="inner-page">
+     
+      <div class="container" data-aos="fade-up">
+        {% if post %}
+       <h2>Natijalar:</h2>
+       {% for i in post %}
+        <div class="section-header">
+           
+          <h2><a href="/post/{{ i.slug }}"> {{ i.title }}</a></h2>
+          
+        </div>
+        {% endfor %}
+           {% else %}
+           <h2>Xech nima topilmadi </h2>
+       
+      {% endif %}
+      </div>
+     
+    </section><!-- End Inner Page -->
+    
+  </main>
+{% endblock content %}
